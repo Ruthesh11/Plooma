@@ -6,10 +6,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.plooma.utils.ProjectSpecificMethods;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.time.Duration;
-
-import com.pandagogogo.utils.ProjectSpecificMethods;
 
 public class loginpage extends ProjectSpecificMethods {
 

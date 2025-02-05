@@ -51,8 +51,7 @@ Class-Path: slf4j-api-1.7.36.jar cucumber-testng-7.10.0.jar apiguardian-
  entreports-3.1.5.jar freemarker-2.3.23.jar mongodb-driver-3.3.0.jar bso
  n-3.3.0.jar mongodb-driver-core-3.3.0.jar httpclient-4.5.2.jar httpcore
  -4.4.4.jar httpmime-4.5.2.jar jsoup-1.9.2.jar gson-2.8.0.jar commons-em
- ail-1.6.0.jar jakarta.mail-1.6.7.jar jakarta.activation-1.2.1.jar Panda
- gogogo_Automation-0.0.1-SNAPSHOT.jar
+ ail-1.6.0.jar jakarta.mail-1.6.7.jar jakarta.activation-1.2.1.jar
 Main-Class: com.satfnRegBot.runner.MainRunner
 Created-By: Maven Integration for Eclipse
 

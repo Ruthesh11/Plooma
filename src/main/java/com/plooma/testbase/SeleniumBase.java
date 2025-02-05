@@ -29,10 +29,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.pandagogogo.basedesign.Browser;
-import com.pandagogogo.basedesign.Element;
-import com.pandagogogo.basedesign.Locators;
-import com.pandagogogo.utils.Reporter;
+import com.plooma.basedesign.Browser;
+import com.plooma.basedesign.Element;
+import com.plooma.basedesign.Locators;
+import com.plooma.utils.Reporter;
+
 
 
 
@@ -627,41 +628,6 @@ public class SeleniumBase extends Reporter implements Browser, Element  {
 			reportStep("The Browser Could not be Launched. Hence Failed \n" + e.getMessage(), "fail");
 		}
 	}
-
-	@Override
-	public WebElement locateElement(Locators locatorType, String value) {
-		try {
-			switch (locatorType) {
-			case CLASS_NAME:
-				return getDriver().findElement(By.className(value));
-			case CSS:
-				return getDriver().findElement(By.cssSelector(value));
-			case ID:
-				return getDriver().findElement(By.id(value));
-			case LINK_TEXT:
-				return getDriver().findElement(By.linkText(value));
-			case NAME:
-				return getDriver().findElement(By.name(value));
-			case PARTIAL_LINKTEXT:
-				return getDriver().findElement(By.partialLinkText(value));
-			case TAGNAME:
-				return getDriver().findElement(By.tagName(value));
-			case XPATH:
-				return getDriver().findElement(By.xpath(value));
-			default:
-				System.err.println("Locator is not Valid");
-				break;
-			}
-		} catch (NoSuchElementException e) {
-			reportStep("The Element with locator:" + locatorType + " Not Found with value: " + value + "\n"
-					+ e.getMessage(), "fail");
-		} catch (Exception e) {
-			reportStep("The Element with locator:" + locatorType + " Not Found with value: " + value + "\n"
-					+ e.getMessage(), "fail");
-		}
-		return null;
-	}
-
 	@Override
 	public WebElement locateElement(String value) {
 		try {
@@ -671,39 +637,6 @@ public class SeleniumBase extends Reporter implements Browser, Element  {
 			reportStep("The Element with locator id Not Found with value: " + value + "\n" + e.getMessage(), "fail");
 		} catch (Exception e) {
 			reportStep("The Element with locator id Not Found with value: " + value + "\n" + e.getMessage(), "fail");
-		}
-		return null;
-	}
-
-	@Override
-	public List<WebElement> locateElements(Locators type, String value) {
-		try {
-			switch (type) {
-			case CLASS_NAME:
-				return getDriver().findElements(By.className(value));
-			case CSS:
-				return getDriver().findElements(By.cssSelector(value));
-			case ID:
-				return getDriver().findElements(By.id(value));
-			case LINK_TEXT:
-				return getDriver().findElements(By.linkText(value));
-			case NAME:
-				return getDriver().findElements(By.name(value));
-			case PARTIAL_LINKTEXT:
-				return getDriver().findElements(By.partialLinkText(value));
-			case TAGNAME:
-				return getDriver().findElements(By.tagName(value));
-			case XPATH:
-				return getDriver().findElements(By.xpath(value));
-			default:
-				System.err.println("Locator is not Valid");
-				break;
-			}
-		} catch (NoSuchElementException e) {
-			reportStep("The Element with locator:" + type + " Not Found with value: " + value + "\n" + e.getMessage(),
-					"fail");
-		} catch (Exception e) {
-			reportStep(e.getMessage(), "fail");
 		}
 		return null;
 	}
@@ -1028,6 +961,18 @@ public class SeleniumBase extends Reporter implements Browser, Element  {
 	@Override
 	public void executeTheScript(String js, WebElement ele) {
 		getDriver().executeScript(js, ele);
+	}
+
+	@Override
+	public WebElement locateElement(Locators locatorType, String value) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<WebElement> locateElements(Locators locatorType, String value) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 
